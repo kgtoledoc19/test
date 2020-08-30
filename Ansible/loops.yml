@@ -1,0 +1,13 @@
+---
+- hosts: all
+  user: root
+  vars:
+    names:
+      - name: David
+      - name: Ester
+      - name: Elena
+
+  tasks:
+  - name: Greetings
+    debug: msg="Greetings {{ item }}! Live long and prosper."
+    with_items: "{{ names }}"
